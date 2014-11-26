@@ -1,0 +1,3 @@
+[submodule "xxhash"]
+	path = xxhash
+	url = https://github.com/koron/java-xxhash.git
