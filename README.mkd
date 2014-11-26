@@ -1,0 +1,30 @@
+# Benchmark hash speed: xxHash vs MurmurHash3 vs Arrays#hashCode
+
+```
+$ gradle run
+:xxhash:compileJava UP-TO-DATE
+:xxhash:processResources UP-TO-DATE
+:xxhash:classes UP-TO-DATE
+:xxhash:jar UP-TO-DATE
+:compileJava UP-TO-DATE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:run
+Format: {LABEL} : {MINUS HASH COUNT}/{ITERATION COUNT} {ELAPSED NANOTIME}
+xxHash          : 499646/1000000 (49.96%) 105,807,877
+MurmurHash3     : 499973/1000000 (50.00%) 116,230,966
+Arrays#hashCode : 500748/1000000 (50.07%) 154,627,625
+
+BUILD SUCCESSFUL
+
+Total time: 8.654 secs
+```
+
+# Facts
+
+*   xxhash is faster 1.5 times than Arrays#hashCode.
+*   xxhash is little faster than MurmurHash3
+
+# Prospects
+
+*   Hash speed is not significant in some kind of benchmarks, because other logics (memory access or so) take most of time.
