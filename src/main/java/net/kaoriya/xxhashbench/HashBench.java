@@ -7,6 +7,7 @@ import java.util.function.Function;
 
 import com.cfelde.bohmap.Binary;
 import net.kaoriya.xxhash.XXHash;
+import org.jruby.util.SipHashInline;
 
 public class HashBench {
 
@@ -49,10 +50,16 @@ public class HashBench {
                 "Format: {LABEL} : {MINUS HASH COUNT}/{ITERATION COUNT} {ELAPSED NANOTIME}");
         run("xxHash", HashBench::xxhash32, ITERATION, KEY_LEN, new Random());
         run("MurmurHash3", MurmurHash::hash3, ITERATION, KEY_LEN, new Random());
+        run("SipHash", HashBench::siphash, ITERATION, KEY_LEN, new Random());
         run("Arrays#hashCode", Arrays::hashCode, ITERATION, KEY_LEN, new Random());
     }
 
     public static int xxhash32(byte[] b) {
         return XXHash.hash32(b, 0, b.length, 0);
+    }
+
+    public static int siphash(byte[] b) {
+        long h = SipHashInline.hash24(0, 0, b);
+        return (int)h;
     }
 }

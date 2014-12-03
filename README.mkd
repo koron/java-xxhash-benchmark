@@ -28,3 +28,13 @@ Total time: 8.654 secs
 # Prospects
 
 *   Hash speed is not significant in some kind of benchmarks, because other logics (memory access or so) take most of time.
+
+# Appendix
+
+## Hash Implementation
+
+Algorithm   | URL
+------------|-----------------------------------------------------------------
+xxHash      | https://github.com/koron/java-xxhash
+MurmurHash3 | https://github.com/yonik/java_util
+SipHash     | https://github.com/nahi/siphash-java-inline
