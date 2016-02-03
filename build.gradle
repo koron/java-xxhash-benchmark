@@ -11,6 +11,8 @@ repositories {
 }
 
 dependencies {
+    compile 'com.google.guava:guava:19.0'
+    compile 'net.openhft:zero-allocation-hashing:0.5'
     compile project(':xxhash')
     compile fileTree(dir: 'libs', include: '*.jar')
     testCompile group: 'junit', name: 'junit', version: '4.+'

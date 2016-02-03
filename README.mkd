@@ -2,23 +2,21 @@
 
 ```
 $ gradle run
-:xxhash:compileJava UP-TO-DATE
-:xxhash:processResources UP-TO-DATE
-:xxhash:classes UP-TO-DATE
-:xxhash:jar UP-TO-DATE
-:compileJava UP-TO-DATE
-:processResources UP-TO-DATE
-:classes UP-TO-DATE
-:run
 Format: {LABEL} : {MINUS HASH COUNT}/{ITERATION COUNT} {ELAPSED NANOTIME}
-xxHash          : 500205/1000000 (50.02%) 107,514,228
-MurmurHash3     : 499615/1000000 (49.96%) 124,922,422
-SipHash         : 499596/1000000 (49.96%) 172,161,862
-Arrays#hashCode : 499129/1000000 (49.91%) 157,121,452
+xxHash          : 500586/1000000 (50.06%) 99,217,166
+MurmurHash3     : 500026/1000000 (50.00%) 97,412,585
+SipHash         : 499198/1000000 (49.92%) 160,292,361
+Arrays#hashCode : 501062/1000000 (50.11%) 133,030,834
 
-BUILD SUCCESSFUL
-
-Total time: 8.654 secs
+*** 64bit hash ***
+Format: {LABEL} : {MINUS HASH COUNT}/{ITERATION COUNT} {ELAPSED NANOTIME}
+xxHash          : 500200/1000000 (50.02%) 116,134,825
+ZAH-city11      : 499568/1000000 (49.96%) 67,066,183
+ZAH-farmNa      : 500519/1000000 (50.05%) 47,524,742
+ZAH-murmur3     : 500130/1000000 (50.01%) 64,455,274
+ZAH-xxHash      : 500586/1000000 (50.06%) 48,073,898
+Guava-murmur3   : 500032/1000000 (50.00%) 280,833,606
+Guava-siphash   : 500248/1000000 (50.02%) 393,090,981
 ```
 
 # Facts
